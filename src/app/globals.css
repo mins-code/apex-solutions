@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #020617;
+  --color-glass-accent: #4F46E5;
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  @apply text-[#EDEDED];
+  background:
+    radial-gradient(circle at top left, #1E1B4B 0%, transparent 60%),
+    radial-gradient(circle at bottom right, #2E1065 0%, transparent 60%),
+    #020617;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply backdrop-blur-md;
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-glow {
+  box-shadow: 0 0 40px 10px rgba(79, 70, 229, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 3px solid #020617;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) #020617;
+}
+
+/* Force-hide Next.js / Turbopack Dev Overlays */
+#nextjs-static-indicator,
+[data-nextjs-static-indicator],
+.nextjs-static-indicator-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
