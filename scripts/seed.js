@@ -15,6 +15,7 @@ const ProjectSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String },
     price: { type: Number },
+    hardwareCost: { type: Number },
     isAvailable: { type: Boolean, required: true, default: true },
     image: { type: String },
     video: { type: String },
@@ -34,6 +35,7 @@ const PROJECTS = [
         video: "/videos/industry.mp4",
         isAvailable: true,
         pdfUrl: "/docs/industry-automation.pdf",
+        hardwareCost: 1200,
     },
     {
         id: "parking",
@@ -43,6 +45,7 @@ const PROJECTS = [
         video: "/videos/parking.mp4",
         isAvailable: true,
         pdfUrl: "/docs/smart-parking.pdf",
+        hardwareCost: 900,
     },
     {
         id: "fan",
@@ -52,6 +55,7 @@ const PROJECTS = [
         video: null,
         isAvailable: true,
         pdfUrl: "/docs/smart-automated-fan.pdf",
+        hardwareCost: 650,
     }
 ];
 

@@ -1,5 +1,6 @@
 import { Outfit, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Modern, geometric sans-serif for regular text
 const outfit = Outfit({
@@ -20,8 +21,20 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Apex Solutions",
-  description: "Hardware Rentals",
+  title:
+    "Apex Solutions – Hardware Rentals, IEEE Projects & Software for Engineering Students in Bengaluru",
+  description:
+    "Apex Solutions offers hardware project rentals, custom software projects, IEEE research papers, PPT design, and final year project support for engineering students in Bengaluru.",
+  openGraph: {
+    title:
+      "Apex Solutions – Hardware Rentals, IEEE Projects & Software for Engineering Students in Bengaluru",
+    description:
+      "Apex Solutions offers hardware project rentals, custom software projects, IEEE research papers, PPT design, and final year project support for engineering students in Bengaluru.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -31,6 +44,7 @@ export default function RootLayout({ children }) {
         className={`${outfit.variable} ${cinzel.variable} ${montserrat.variable} font-sans antialiased bg-dark-bg text-white`}
       >
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

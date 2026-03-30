@@ -92,6 +92,13 @@ export default function ProjectCard({ project, featured = false }) {
                     {project.title}
                 </h3>
 
+                {/* Hardware Cost Badge */}
+                {project.hardwareCost && (
+                    <span className="inline-block w-fit mb-4 px-3 py-1 text-xs font-medium tracking-wide text-white/80 bg-indigo-500/15 border border-indigo-400/20 rounded-full backdrop-blur-sm">
+                        Components: ₹{project.hardwareCost.toLocaleString('en-IN')}
+                    </span>
+                )}
+
                 {/* Actions Layout */}
                 <div className="flex items-center justify-between mt-auto">
                     {project.price && (

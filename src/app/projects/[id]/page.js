@@ -1,50 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RentalChatbot from "@/components/RentalChatbot";
 
-// Reuse the projects data here for the static mock
-const PROJECTS = {
-    industry: {
-        id: "industry",
-        title: "Industry Automation",
-        description: "Designed for immersive automation with deep machine learning and quantum-level precise mechanics.",
-        image: "/images/industry-cover.png",
-        video: "/videos/industry.mp4",
-        isAvailable: true,
-        pdfUrl: "/docs/industry-automation.pdf",
-    },
-    parking: {
-        id: "parking",
-        title: "Smart Parking System",
-        description: "Designed for immersive vehicle storage with dynamic spatial reconfiguration sensors.",
-        image: "/images/parking-cover.png",
-        video: "/videos/parking.mp4",
-        isAvailable: true,
-        pdfUrl: "/docs/smart-parking.pdf",
-    },
-    fan: {
-        id: "fan",
-        title: "Smart Automated Fan",
-        description: "Intelligent air circulation system powered by environmental monitoring and automated response.",
-        image: "/images/fan-cover.png",
-        video: null,
-        isAvailable: true,
-        pdfUrl: "/docs/smart-automated-fan.pdf",
-    }
-};
-
 export default function ProjectDetails({ params }) {
     // Await the params before using its properties in Next 15 Client Components via React.use()
     const pageParams = React.use(params);
-    const project = PROJECTS[pageParams.id];
+    const [project, setProject] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     const [isChatOpen, setIsChatOpen] = useState(false);
 
-    if (!project) {
-        notFound();
+    useEffect(() => {
+        async function fetchProject() {
+            try {
+                const res = await fetch("/api/projects");
+                if (!res.ok) throw new Error("Failed to fetch projects");
+                const projects = await res.json();
+                const match = projects.find((p) => p.id === pageParams.id);
+                if (!match) {
+                    notFound();
+                    return;
+                }
+                setProject(match);
+            } catch (err) {
+                console.error("Error loading project:", err);
+                notFound();
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchProject();
+    }, [pageParams.id]);
+
+    if (loading || !project) {
+        return (
+            <main className="min-h-screen flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+            </main>
+        );
     }
 
     // Split title to emulate the Aurionas "Immerse Deeply" font-weight split
@@ -79,6 +75,17 @@ export default function ProjectDetails({ params }) {
                             <p className="text-[#a3a3b2] text-xl font-light leading-relaxed max-w-md mt-6">
                                 {project.description}
                             </p>
+
+                            {project.hardwareCost && (
+                                <div className="mt-6">
+                                    <p className="text-white/90 text-lg font-medium">
+                                        Component cost: ₹{project.hardwareCost.toLocaleString('en-IN')}
+                                    </p>
+                                    <p className="text-[#a3a3b2] text-sm font-light mt-1">
+                                        Rental pricing via WhatsApp
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <div className="pt-2 flex flex-col gap-5">
@@ -91,7 +98,7 @@ export default function ProjectDetails({ params }) {
                                     active:scale-95 active:bg-indigo-200 active:shadow-[inset_0_3px_10px_rgba(0,0,0,0.3)]
                                     cursor-pointer select-none"
                             >
-                                Initiate Rental!
+                                Ask About This Project
                             </button>
                             <a
                                 href={project.pdfUrl}

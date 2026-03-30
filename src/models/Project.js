@@ -6,6 +6,7 @@ const ProjectSchema = new mongoose.Schema(
         title: { type: String, required: true },
         description: { type: String },
         price: { type: Number },
+        hardwareCost: { type: Number },
         isAvailable: { type: Boolean, required: true, default: true },
         image: { type: String },
         video: { type: String },
