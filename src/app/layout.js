@@ -39,8 +39,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${outfit.variable} ${cinzel.variable} ${montserrat.variable} font-sans antialiased bg-dark-bg text-white`}
       >
         {children}
