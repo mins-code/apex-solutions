@@ -55,7 +55,7 @@ export default function ProjectCard({ project, featured = false }) {
                 >
                     {project.image ? (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-80 z-0" />
+                            <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-80 z-0 transition-transform duration-500 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-[#3bbfbf]/08 mix-blend-overlay z-0"></div>
 
                             {/* "PREVIEW" text overlay that fades on hover */}
@@ -78,7 +78,7 @@ export default function ProjectCard({ project, featured = false }) {
                         loop
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                 )}
 
