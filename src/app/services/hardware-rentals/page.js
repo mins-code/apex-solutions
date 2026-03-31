@@ -47,7 +47,7 @@ export default function HardwareRentalsPage() {
           Hardware Rentals
         </h1>
         <p className="text-[#8b9bb4] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4">
-          Rent fully working, demo-ready hardware projects for your final year presentation — without the hassle of building from scratch.
+          Rent fully working, demo-ready hardware projects for your presentation or demo — without the hassle of building from scratch.
         </p>
         <p className="text-[#8b9bb4] text-base leading-relaxed max-w-2xl mx-auto">
           At Apex Solutions, we offer a curated catalogue of embedded systems and IoT projects that you can rent on a short-term basis. Each unit is pre-assembled, tested, and comes with a working demo you can show your college panel with confidence.

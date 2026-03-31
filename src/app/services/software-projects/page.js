@@ -23,7 +23,7 @@ export default function SoftwareProjectsPage() {
           Software Projects
         </h1>
         <p className="text-[#8b9bb4] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4">
-          Custom-built software tailored to your final year project needs — delivered with full source code, documentation, and execution support.
+          Custom-built software tailored to your project needs — delivered with full source code, documentation, and execution support.
         </p>
         <p className="text-[#8b9bb4] text-base leading-relaxed max-w-2xl mx-auto">
           From web applications to embedded C programs, we build functional software that meets your college&apos;s requirements. Every project is developed from scratch and explained thoroughly so you can present it confidently.

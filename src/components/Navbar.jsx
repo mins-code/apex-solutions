@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <header
       style={{
@@ -81,20 +85,22 @@ export default function Navbar() {
 
         {/* Nav links */}
         <nav style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-          <Link
-            href="/"
-            style={{
-              color: "#8baab4",
-              textDecoration: "none",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.target.style.color = "#3bbfbf")}
-            onMouseLeave={(e) => (e.target.style.color = "#8baab4")}
-          >
-            Home
-          </Link>
+          {!isHome && (
+            <Link
+              href="/"
+              style={{
+                color: "#8baab4",
+                textDecoration: "none",
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#3bbfbf")}
+              onMouseLeave={(e) => (e.target.style.color = "#8baab4")}
+            >
+              Home
+            </Link>
+          )}
           <a
             href={`https://wa.me/91${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%2C%20I%27m%20interested%20in%20Apex%20Solutions`}
             target="_blank"

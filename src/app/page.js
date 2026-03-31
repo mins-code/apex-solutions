@@ -1,43 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import ProjectCard from "@/components/ProjectCard";
-
 export default function Home() {
-  const [projects, setProjects] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        const res = await fetch("/api/projects");
-        if (res.ok) {
-          const data = await res.json();
-          setProjects(data);
-        }
-      } catch (error) {
-        console.error("Failed to fetch projects:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchProjects();
-  }, []);
-
-  if (isLoading) {
-    return (
-      <main className="min-h-screen pt-12 pb-20 flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-[#3bbfbf] border-t-transparent rounded-full animate-spin"></div>
-      </main>
-    );
-  }
 
   return (
     <main className="min-h-screen pt-12 pb-20 px-6 md:px-12 lg:px-24">
       {/* Hero Section */}
       <section className="text-center max-w-3xl mx-auto py-16 md:py-24 mb-12">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat tracking-tight font-bold text-white mb-6 leading-tight">
-          Your Final Year Project,{" "}
+          Your Project,{" "}
           <span
             style={{
               background: "linear-gradient(135deg, #3bbfbf 0%, #c07a3a 100%)",
@@ -50,7 +20,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-[#8baab4] text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-          Hardware rentals, software projects, IEEE papers, PPTs, and custom builds — for engineering students in Bengaluru
+          Hardware rentals, software projects, IEEE papers, PPTs, and custom builds — for all engineering students in Bengaluru
         </p>
         <a
           href={`https://wa.me/91${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%2C%20I%27m%20interested%20in%20Apex%20Solutions`}
@@ -71,14 +41,14 @@ export default function Home() {
           What We Offer
         </h2>
         <p className="text-[#8baab4] text-center mb-10 max-w-xl mx-auto">
-          Everything you need to ace your final year — all in one place.
+          Everything you need to bring your project to life — all in one place.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {[
             {
               emoji: "🔧",
               title: "Hardware Rentals",
-              desc: "Rent working hardware projects for your final year demo",
+              desc: "Rent working hardware projects for any demo or presentation",
               href: "/services/hardware-rentals",
             },
             {
@@ -135,22 +105,6 @@ export default function Home() {
                 Learn More →
               </span>
             </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Hardware Projects */}
-      <section className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-montserrat font-bold text-white mb-2 tracking-tight">
-          Available Projects
-        </h2>
-        <p className="text-[#8baab4] mb-8">Browse our hardware project catalogue.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id || project._id}
-              project={project}
-            />
           ))}
         </div>
       </section>

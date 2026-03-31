@@ -26,7 +26,7 @@ export default function CustomHardwarePage() {
           Have a project idea that doesn&apos;t fit a standard template? We&apos;ll build it from scratch — custom hardware designed and assembled to your exact specification.
         </p>
         <p className="text-[#8b9bb4] text-base leading-relaxed max-w-2xl mx-auto">
-          From novel IoT systems to sensor-driven automation rigs, Apex Solutions can prototype and build custom embedded hardware for your final year project. You bring the idea; we bring the expertise.
+          From novel IoT systems to sensor-driven automation rigs, Apex Solutions can prototype and build custom embedded hardware for any project. You bring the idea; we bring the expertise.
         </p>
       </section>
 
