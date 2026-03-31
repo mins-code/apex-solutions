@@ -1,6 +1,7 @@
 import { Outfit, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Navbar from "@/components/Navbar";
 
 // Modern, geometric sans-serif for regular text
 const outfit = Outfit({
@@ -44,7 +45,8 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${outfit.variable} ${cinzel.variable} ${montserrat.variable} font-sans antialiased bg-dark-bg text-white`}
       >
-        {children}
+        <Navbar />
+        <div style={{ paddingTop: "64px" }}>{children}</div>
         <WhatsAppButton />
       </body>
     </html>
