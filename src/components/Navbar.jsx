@@ -43,8 +43,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Apex Solutions Logo"
-            width={44}
-            height={44}
+            width={60}
+            height={60}
             style={{ objectFit: "contain" }}
             priority
           />
@@ -52,22 +52,26 @@ export default function Navbar() {
             style={{
               fontFamily: "var(--font-montserrat), sans-serif",
               fontWeight: 700,
-              fontSize: "1.15rem",
-              letterSpacing: "0.04em",
+              fontSize: "1.6rem",
+              letterSpacing: "0.06em",
               background: "linear-gradient(135deg, #3bbfbf 0%, #c07a3a 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              lineHeight: 1.2,
+              lineHeight: 1.15,
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            APEX<br />
+            <span>APEX</span>
             <span
               style={{
-                fontSize: "0.65rem",
+                fontSize: "0.72rem",
                 fontWeight: 600,
-                letterSpacing: "0.18em",
-                opacity: 0.85,
+                letterSpacing: "0.22em",
+                opacity: 0.9,
               }}
             >
               SOLUTIONS
