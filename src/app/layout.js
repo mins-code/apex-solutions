@@ -1,6 +1,6 @@
 import { Outfit, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatbotButton from "@/components/ChatbotButton";
 import Navbar from "@/components/Navbar";
 
 // Modern, geometric sans-serif for regular text
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         <div style={{ paddingTop: "64px" }}>{children}</div>
-        <WhatsAppButton />
+        <ChatbotButton />
       </body>
     </html>
   );

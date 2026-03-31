@@ -54,27 +54,36 @@ export default function Navbar() {
           />
           <span
             style={{
-              fontFamily: "var(--font-montserrat), sans-serif",
-              fontWeight: 700,
-              fontSize: "1.6rem",
-              letterSpacing: "0.06em",
-              background: "linear-gradient(135deg, #3bbfbf 0%, #c07a3a 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              lineHeight: 1.15,
-              textAlign: "center",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              lineHeight: 1.15,
             }}
           >
-            <span>APEX</span>
             <span
               style={{
-                fontSize: "0.72rem",
+                fontFamily: "var(--font-montserrat), sans-serif",
+                fontWeight: 700,
+                fontSize: "1.6rem",
+                letterSpacing: "0.06em",
+                background: "linear-gradient(135deg, #3bbfbf 0%, #c07a3a 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              APEX
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-montserrat), sans-serif",
                 fontWeight: 600,
+                fontSize: "0.72rem",
                 letterSpacing: "0.22em",
+                background: "linear-gradient(135deg, #3bbfbf 0%, #c07a3a 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
                 opacity: 0.9,
               }}
             >

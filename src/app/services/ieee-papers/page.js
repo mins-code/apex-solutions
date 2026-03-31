@@ -26,7 +26,7 @@ export default function IEEEPapersPage() {
           Professionally written research papers, formatted strictly to IEEE standards — ready for submission to your college or conference.
         </p>
         <p className="text-[#8b9bb4] text-base leading-relaxed max-w-2xl mx-auto">
-          Writing an IEEE paper requires precise formatting, structured abstract-writing, and proper literature citations. We handle all of that for you, delivering a clean, submission-ready document based on your project or chosen topic.
+          Writing an IEEE paper requires precise formatting, structured abstract-writing, and proper literature citations. We handle all of that for you, delivering a clean, plagiarism-free, submission-ready document based on your project or chosen topic.
         </p>
       </section>
 
