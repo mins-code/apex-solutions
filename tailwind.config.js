@@ -13,9 +13,10 @@ module.exports = {
         montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
       colors: {
-        "dark-bg": "#020617",
-        "glass-accent": "#4F46E5",
-        "glass-border": "rgba(255, 255, 255, 0.12)",
+        "dark-bg": "#050e0e",
+        "glass-accent": "#3bbfbf",
+        "glass-copper": "#c07a3a",
+        "glass-border": "rgba(59, 191, 191, 0.15)",
       },
     },
   },

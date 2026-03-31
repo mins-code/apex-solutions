@@ -40,7 +40,7 @@ export default function HardwareRentalsPage() {
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto text-center mb-16">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-panel border border-glass-accent/30 text-5xl mb-6 shadow-[0_0_40px_rgba(79,70,229,0.2)]">
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-panel border border-[#3bbfbf]/30 text-5xl mb-6 shadow-[0_0_40px_rgba(59,191,191,0.15)]">
           🔧
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat tracking-tight font-bold text-white mb-6 leading-tight">
@@ -76,7 +76,7 @@ export default function HardwareRentalsPage() {
           ].map((f) => (
             <div
               key={f.title}
-              className="glass-panel rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:border-glass-accent/40 hover:shadow-[0_0_30px_rgba(79,70,229,0.15)]"
+              className="glass-panel rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#3bbfbf]/40 hover:shadow-[0_0_30px_rgba(59,191,191,0.12)]"
             >
               <span className="text-3xl">{f.icon}</span>
               <h3 className="text-white font-semibold text-base">{f.title}</h3>
@@ -97,7 +97,7 @@ export default function HardwareRentalsPage() {
 
         {isLoading ? (
           <div className="flex justify-center py-20">
-            <div className="w-12 h-12 border-4 border-glass-accent border-t-transparent rounded-full animate-spin" />
+            <div className="w-12 h-12 border-4 border-[#3bbfbf] border-t-transparent rounded-full animate-spin" />
           </div>
         ) : projects.length === 0 ? (
           <p className="text-[#8b9bb4] text-center py-20">No projects available at the moment. Check back soon!</p>

@@ -34,7 +34,7 @@ export default function ProjectCard({ project, featured = false }) {
             <div className="absolute top-4 right-4 z-20 flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
                 <div
                     className={`w-2.5 h-2.5 rounded-full ${project.isAvailable
-                        ? "bg-green-400 shadow-[0_0_8px_rgba(7ade80,0.8)] animate-pulse"
+                        ? "bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-pulse"
                         : "bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"
                         }`}
                 ></div>
@@ -45,7 +45,7 @@ export default function ProjectCard({ project, featured = false }) {
 
             {/* Media Container */}
             <div
-                className="relative w-full overflow-hidden bg-[#020617]/50"
+                className="relative w-full overflow-hidden bg-[#050e0e]/50"
                 style={{ aspectRatio: project.videoAspectRatio || "16/9", minHeight: "16rem" }}
             >
                 {/* Thumbnail Placeholder / Image Viewer */}
@@ -56,7 +56,7 @@ export default function ProjectCard({ project, featured = false }) {
                     {project.image ? (
                         <div className="relative w-full h-full flex items-center justify-center">
                             <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-80 z-0" />
-                            <div className="absolute inset-0 bg-[#4F46E5]/10 mix-blend-overlay z-0"></div>
+                            <div className="absolute inset-0 bg-[#3bbfbf]/08 mix-blend-overlay z-0"></div>
 
                             {/* "PREVIEW" text overlay that fades on hover */}
                             <div className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 transition-opacity duration-300 ${isHovered ? "opacity-0" : "opacity-100"}`}>
@@ -64,7 +64,7 @@ export default function ProjectCard({ project, featured = false }) {
                             </div>
                         </div>
                     ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-indigo-900/40 to-black flex items-center justify-center">
+                        <div className="w-full h-full bg-gradient-to-br from-teal-900/40 to-black flex items-center justify-center">
                             <span className="text-white/20 font-bold uppercase tracking-widest text-xl">Preview</span>
                         </div>
                     )}
@@ -94,7 +94,7 @@ export default function ProjectCard({ project, featured = false }) {
 
                 {/* Hardware Cost Badge */}
                 {project.hardwareCost && (
-                    <span className="inline-block w-fit mb-4 px-3 py-1 text-xs font-medium tracking-wide text-white/80 bg-indigo-500/15 border border-indigo-400/20 rounded-full backdrop-blur-sm">
+                    <span className="inline-block w-fit mb-4 px-3 py-1 text-xs font-medium tracking-wide text-[#3bbfbf]/90 bg-[#3bbfbf]/10 border border-[#3bbfbf]/20 rounded-full backdrop-blur-sm">
                         Components: ₹{project.hardwareCost.toLocaleString('en-IN')}
                     </span>
                 )}
@@ -106,7 +106,7 @@ export default function ProjectCard({ project, featured = false }) {
                             ${project.price.toLocaleString()}
                         </span>
                     )}
-                    <div className="px-5 py-2.5 bg-glass-accent/20 hover:bg-glass-accent/40 text-white rounded-full text-sm font-semibold transition-colors duration-300 border border-glass-accent/30 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]">
+                    <div className="px-5 py-2.5 bg-[#3bbfbf]/15 hover:bg-[#3bbfbf]/30 text-[#3bbfbf] rounded-full text-sm font-semibold transition-colors duration-300 border border-[#3bbfbf]/25 hover:shadow-[0_0_15px_rgba(59,191,191,0.25)] hover:text-white">
                         View Details
                     </div>
                 </div>

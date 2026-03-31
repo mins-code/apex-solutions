@@ -16,7 +16,7 @@ export default function SoftwareProjectsPage() {
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto text-center mb-16">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-panel border border-glass-accent/30 text-5xl mb-6 shadow-[0_0_40px_rgba(79,70,229,0.2)]">
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-panel border border-[#3bbfbf]/30 text-5xl mb-6 shadow-[0_0_40px_rgba(59,191,191,0.15)]">
           💻
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat tracking-tight font-bold text-white mb-6 leading-tight">
@@ -60,7 +60,7 @@ export default function SoftwareProjectsPage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="glass-panel rounded-2xl p-6 flex gap-4 items-start transition-all duration-300 hover:-translate-y-1 hover:border-glass-accent/40 hover:shadow-[0_0_30px_rgba(79,70,229,0.15)]"
+              className="glass-panel rounded-2xl p-6 flex gap-4 items-start transition-all duration-300 hover:-translate-y-1 hover:border-[#3bbfbf]/40 hover:shadow-[0_0_30px_rgba(59,191,191,0.12)]"
             >
               <span className="text-3xl shrink-0">{item.icon}</span>
               <div>
@@ -85,7 +85,7 @@ export default function SoftwareProjectsPage() {
             { step: "04", text: "Final delivery with full source code, README, and a walkthrough session." },
           ].map((s) => (
             <div key={s.step} className="glass-panel rounded-xl p-5 flex items-center gap-5 border border-white/5">
-              <span className="text-glass-accent font-bold text-2xl font-montserrat shrink-0">{s.step}</span>
+              <span className="text-[#3bbfbf] font-bold text-2xl font-montserrat shrink-0">{s.step}</span>
               <p className="text-[#8b9bb4] text-sm leading-relaxed">{s.text}</p>
             </div>
           ))}

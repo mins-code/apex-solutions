@@ -38,7 +38,7 @@ export default function ProjectDetails({ params }) {
     if (loading || !project) {
         return (
             <main className="min-h-screen flex items-center justify-center">
-                <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+                <div className="w-12 h-12 border-4 border-[#3bbfbf]/40 border-t-[#3bbfbf] rounded-full animate-spin" />
             </main>
         );
     }
@@ -94,8 +94,8 @@ export default function ProjectDetails({ params }) {
                                 className="w-fit px-10 py-5 bg-white text-black rounded-full font-bold tracking-wide text-lg
                                     shadow-[0_0_40px_rgba(255,255,255,0.2)]
                                     transition-all duration-200
-                                    hover:bg-indigo-100 hover:scale-105 hover:shadow-[0_0_60px_rgba(99,102,241,0.6)]
-                                    active:scale-95 active:bg-indigo-200 active:shadow-[inset_0_3px_10px_rgba(0,0,0,0.3)]
+                                    hover:bg-[#c8efef] hover:scale-105 hover:shadow-[0_0_60px_rgba(59,191,191,0.5)]
+                                    active:scale-95 active:bg-[#a0e0e0] active:shadow-[inset_0_3px_10px_rgba(0,0,0,0.3)]
                                     cursor-pointer select-none"
                             >
                                 Ask About This Project
@@ -116,9 +116,9 @@ export default function ProjectDetails({ params }) {
                     </div>
 
                     {/* CENTER VISUAL: Immersive Product Media (Image instead of Video) */}
-                    <div className="lg:col-span-5 relative w-full aspect-[4/5] lg:h-[75vh] rounded-[3rem] overflow-hidden glass-panel glass-glow border border-glass-accent/20 shadow-[-20px_0_100px_rgba(79,70,229,0.1)] z-0 flex items-center justify-center -mx-4 lg:mx-0">
+                    <div className="lg:col-span-5 relative w-full aspect-[4/5] lg:h-[75vh] rounded-[3rem] overflow-hidden glass-panel glass-glow border border-[#3bbfbf]/20 shadow-[-20px_0_100px_rgba(59,191,191,0.08)] z-0 flex items-center justify-center -mx-4 lg:mx-0">
                         {/* Fallback gradient if image not found */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#1E1B4B] to-[#020617] -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#0a2828] to-[#050e0e] -z-10" />
 
                         <img
                             src={project.image}
@@ -127,7 +127,7 @@ export default function ProjectDetails({ params }) {
                         />
 
                         {/* Subtle overlay gradients for depth */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-80 pointer-events-none z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#050e0e] via-transparent to-transparent opacity-80 pointer-events-none z-10" />
 
                         <div className="absolute inset-x-0 bottom-10 flex justify-center z-10 pointer-events-none">
                             <div className="flex items-center gap-2 px-4 py-2 glass-panel rounded-full border border-white/5 text-xs tracking-widest uppercase text-white/70 backdrop-blur-3xl">
@@ -143,19 +143,19 @@ export default function ProjectDetails({ params }) {
                         {project.video ? (
                             <div
                                 onClick={() => setIsVideoModalOpen(true)}
-                                className="glass-panel w-full sm:w-80 rounded-[2.5rem] p-8 pb-10 border border-white/10 flex flex-col items-center text-center relative overflow-hidden bg-black/40 backdrop-blur-2xl cursor-pointer group hover:border-glass-accent/50 transition-colors duration-300"
+                                className="glass-panel w-full sm:w-80 rounded-[2.5rem] p-8 pb-10 border border-white/10 flex flex-col items-center text-center relative overflow-hidden bg-black/40 backdrop-blur-2xl cursor-pointer group hover:border-[#3bbfbf]/50 transition-colors duration-300"
                             >
                                 {/* Inner background glow layer */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-glass-accent/10 group-hover:bg-glass-accent/30 blur-[60px] rounded-full pointer-events-none transition-colors duration-500" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#3bbfbf]/10 group-hover:bg-[#3bbfbf]/25 blur-[60px] rounded-full pointer-events-none transition-colors duration-500" />
 
                                 {/* Play Icon Graphic */}
                                 <div className="relative w-28 h-28 flex items-center justify-center mb-6">
-                                    <div className="absolute inset-0 rounded-full border border-dashed border-glass-accent/50 animate-[spin_15s_linear_infinite]" />
-                                    <div className="absolute inset-2 rounded-full border border-white/10 bg-[#020617]/50 group-hover:bg-[#020617]/80 transition-colors" />
+                                    <div className="absolute inset-0 rounded-full border border-dashed border-[#3bbfbf]/50 animate-[spin_15s_linear_infinite]" />
+                                    <div className="absolute inset-2 rounded-full border border-white/10 bg-[#050e0e]/50 group-hover:bg-[#050e0e]/80 transition-colors" />
                                     <div className="relative z-10 w-0 h-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-white ml-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-transform duration-300" />
                                 </div>
 
-                                <h3 className="text-2xl font-light text-white mb-3 group-hover:text-glass-accent transition-colors drop-shadow-md">
+                                <h3 className="text-2xl font-light text-white mb-3 group-hover:text-[#3bbfbf] transition-colors drop-shadow-md">
                                     Watch Demo
                                 </h3>
 
@@ -166,7 +166,7 @@ export default function ProjectDetails({ params }) {
                         ) : (
                             <div className="glass-panel w-full sm:w-80 rounded-[2.5rem] p-8 pb-10 border border-white/10 flex flex-col items-center text-center relative overflow-hidden bg-black/40 backdrop-blur-2xl">
                                 <div className="relative w-28 h-28 flex items-center justify-center mb-6">
-                                    <div className="absolute inset-2 rounded-full border border-white/5 bg-[#020617]/20" />
+                                    <div className="absolute inset-2 rounded-full border border-white/5 bg-[#050e0e]/20" />
                                     <span className="text-[#a3a3b2] opacity-50 text-sm tracking-widest uppercase text-center leading-tight mt-[4.5rem]">No<br />Demo</span>
                                 </div>
                                 <h3 className="text-2xl font-light text-white/50 mb-3 drop-shadow-md mt-4">
@@ -185,14 +185,14 @@ export default function ProjectDetails({ params }) {
 
             {/* Video Modal Pop-Up */}
             {isVideoModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-12 md:p-24 bg-[#020617]/90 backdrop-blur-xl animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-12 md:p-24 bg-[#050e0e]/90 backdrop-blur-xl animate-in fade-in duration-300">
                     {/* Close wrapper overlay */}
                     <div
                         className="absolute inset-0 cursor-pointer"
                         onClick={() => setIsVideoModalOpen(false)}
                     />
 
-                    <div className="relative w-full max-w-6xl aspect-video bg-black rounded-3xl overflow-hidden glass-panel border border-white/20 shadow-[0_0_100px_rgba(79,70,229,0.3)] z-10">
+                    <div className="relative w-full max-w-6xl aspect-video bg-black rounded-3xl overflow-hidden glass-panel border border-white/20 shadow-[0_0_100px_rgba(59,191,191,0.2)] z-10">
                         <button
                             onClick={() => setIsVideoModalOpen(false)}
                             className="absolute top-6 right-6 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors border border-white/10"
